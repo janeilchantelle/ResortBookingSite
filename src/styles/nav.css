@@ -3,7 +3,7 @@
     grid-template-columns: 2fr 0.2fr 2fr;
     grid-gap: 0px;
     margin-bottom: 40px;
-    
+    border-top: 1px solid rgb(241, 124, 128);
 }
 
 .address{
@@ -13,11 +13,12 @@
     flex-direction: column;
     align-items: first baseline;
     padding-left: 80px;
-    padding-top: 20px;
+    padding-top: 50px;
     padding-bottom: 20px;
     gap: 12px;
     width: 100%;
     margin-top: 16px;
+    height: 135px;
 }
 #logo{
     width: 200px;
@@ -43,6 +44,27 @@
     font-size: 11pt;
     font-family: 'Roboto', sans-serif;
     
+}
+
+.navLinks3{
+    margin-left: auto;
+    margin-right: 0px;
+    padding-top: 30px;
+    font-size: 12.5pt;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.logout {
+    height: 20px;
+    padding-left:3px;
+    padding-top: 3px;
+}
+
+.user {
+    height: 28px;
+    margin-right: -5px;
+    margin-bottom: -5px;
 }
 
 a:link, a:visited {
@@ -118,5 +140,8 @@ a:visited{
     width: 100%;
 }
 .forwardArrow{
-    width: 20px;
+    width: 25px;
+    position: relative;
+    right: -3px;
 }
+

@@ -1,9 +1,12 @@
 .roomData{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between; */
     gap: 32px;
     padding: 75px;
+    width: 100%;
     /* background-color: pink; */
-    flex-wrap: nowrap;
-    min-width:fit-content;
+    /* flex-wrap: wrap; */
+    /* min-width:fit-content; */
+    /* background-color: blueviolet; */
 }

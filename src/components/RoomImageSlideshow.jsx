@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import '../styles/room-image-slideshow.css';
 
 const RoomImageSlideshow = ({imagesList}) => {

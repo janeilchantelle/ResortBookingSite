@@ -1,0 +1,27 @@
+{
+  "authSelections": "userPoolOnly",
+  "resourceName": "islandserenity9abe4b90",
+  "serviceType": "imported",
+  "region": "us-east-2",
+  "aliasAttributes": [
+    "preferred_username"
+  ],
+  "authProvidersUserPool": [],
+  "requiredAttributes": [
+    "email",
+    "given_name",
+    "family_name"
+  ],
+  "passwordPolicyMinLength": 8,
+  "passwordPolicyCharacters": [
+    "Requires Lowercase",
+    "Requires Uppercase",
+    "Requires Numbers",
+    "Requires Symbols"
+  ],
+  "mfaConfiguration": "OFF",
+  "autoVerifiedAttributes": [
+    "email"
+  ],
+  "mfaTypes": []
+}

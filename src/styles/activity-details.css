@@ -1,10 +1,7 @@
 .activity-name{
     background-color: rgba(42, 123, 119);
-    /* margin-top: 80px; */
     padding-left: 40px;
     padding-right: 40px;
-    /* padding-bottom: 16px; */
-    /* padding-top: 16px; */
     font-family: Inter;
     color: white;
     height: 80px;
@@ -13,9 +10,8 @@
     width: 100%;
 }
 .activity-form{
-    /* background-color: rgba(255, 138, 152, 0.286); */
     background-color: rgba(211, 250, 250, 0.473);
-    height: fit-content;
+    height: 100%;
     width: 100%;
     min-width: 400px;
 }
@@ -25,39 +21,26 @@
 }
 .activity-image-text{
     display: flex;
-    height: 375px;
+    height: fit-content;
 }
 .activityImage{
     width: 50%;
-    max-height: fit-content;
-    height: 100%;
 }
 .activity-textbox{
     display: flex;
     flex-direction: column;
-    /* background-color: aquamarine; */
     padding: 24px;
     width: 100%;
     gap: 16px;
 }
 #activityDescription{
-    /* margin-left: 40px; */
     margin-top: 24px;
 }
 #activityDate{
-    /* margin-left: 40px; */
     margin-top: 8px;
 }
 
-/* .activity-date{
-    display: flex;
-    gap: 24px;
-} */
-
-
 .activity-textbox button{
-    /* margin-left: 32px; */
-    /* margin-right: 32px; */
     background-color: rgba(255, 138, 152);
     border: none;
     padding: 8px;

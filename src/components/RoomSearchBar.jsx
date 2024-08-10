@@ -1,44 +1,60 @@
 import { useState } from "react";
 import "../styles/activity-room-search-bars.css"
+import { useNavigate } from "react-router-dom";
 
-const RoomSearchBar = ({checkInDate, setCheckInDate, checkOutDate, setCheckOutDate, guests, setGuests, allRoomData}) => {
+const RoomSearchBar = ({checkInDate, setCheckInDate, checkOutDate, setCheckOutDate, guests, setGuests, type, setType, allRoomData}) => {
     
+    const navigate = useNavigate();
 
-    const [error, setError] = useState('');
+    const [dateError, setDateError] = useState(null);
+    const [guestError, setGuestError] = useState(null);
 
-    const handleCheckInChange = (event) => {
-        setCheckInDate(event.target.value)
-    }
-    
-    const handleCheckOutChange = (event) => {
-    setCheckOutDate(event.target.value);
+    const handleInputChange = (e) => {
+        // Update state based on input changes
+        if (e.target.name === 'checkin-date') {
+            setCheckInDate(e.target.value);
+        } else if (e.target.name === 'checkout-date') {
+            setCheckOutDate(e.target.value);
+            setDateError(null);
+        } else if(e.target.name === "guests"){
+            setGuests(e.target.value);
+            setGuestError(null);
+        }
     };
 
-    const handleGuestChange = (event) => {
-        setGuests(event.target.value);
+    const handleTypeChange = (event) =>{
+        setType(event.target.value)
     }
 
     const handleSearch = (event) => {
         event.preventDefault();
 
         if (!checkInDate || !checkOutDate) {
-            setError('Both check-in and check-out dates are required.');
+            setDateError('Both check-in and check-out dates are required.');
             return;
         }
         if (!guests){
-            setError("Please select the number of guests.")
+            setGuestError("Please select the number of guests.")
             return;
         }
 
         // Example: Log the dates to the console or send them to an API
         console.log(`Check-In Date: ${checkInDate}`);
         console.log(`Check-Out Date: ${checkOutDate}`);
-        // Clear error and reset form or redirect as needed
-        setError('');
-        // Perform any further actions such as API calls or state updates
+        // // Clear error and reset form or redirect as needed
+        setGuestError('');
+        setDateError('');
+
+         // Construct URL based on the selected filters
+         let url = `/room-availability/${checkInDate}/${checkOutDate}/${guests}/`;
+         if (type && type !== "") {
+             url += `${type}`;
+         }
+     
+         // Navigate to the search results page with selected parameters
+         navigate(url);
     }
   
-
     return (
         <>
             <div className="search-header">
@@ -56,7 +72,7 @@ const RoomSearchBar = ({checkInDate, setCheckInDate, checkOutDate, setCheckOutDa
                         name="checkin-date" 
                         id="checkin-date" 
                         value={checkInDate}
-                        onChange={handleCheckInChange}
+                        onChange={handleInputChange}
                         />
                     </div>
                     <div className="checkin-checkout-boxes">
@@ -66,25 +82,29 @@ const RoomSearchBar = ({checkInDate, setCheckInDate, checkOutDate, setCheckOutDa
                             name="checkout-date" 
                             id="checkout-date" 
                             value={checkOutDate}
-                            onChange={handleCheckOutChange}
+                            onChange={handleInputChange}
                         />
                     </div>
                     <div className="guests">
                         <label htmlFor="guests">GUESTS: </label>
-                        <input type="number" name="guests" id="guests" value={guests} onChange={handleGuestChange}/>
+                        <input type="number" name="guests" id="guests" value={guests} onChange={handleInputChange}/>
                     </div>
                     <div className="type">
                         <label htmlFor="type">TYPE: </label>
-                        <select name="type" className="select-room-type">
+                        <select name="type" className="select-room-type" onChange={handleTypeChange}>
                             <option>Select your preferred accommodation</option>
-                            {allRoomData && allRoomData.map(room => (
-                                <option key={room.room_id}>{room.view}</option>
-                            ))}
+                            <option value="room">Room</option>
+                            <option value="suite">Suite</option>
+                            <option value="villa">Villa</option>
+                            {/* {allRoomData && allRoomData.map(room => (
+                                <option key={room.room_id}>{room.type}</option>
+                            ))} */}
                         </select>
                     </div>
                 </div>
 
-                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {dateError && <p style={{ color: 'red' }}>{dateError}</p>}
+                {guestError && <p style={{ color: 'red' }}>{guestError}</p>}
 
                 <button type="submit">SEARCH</button>
 

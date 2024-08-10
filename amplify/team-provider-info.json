@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-islandserenity-dev-5c507-authRole",
+      "UnauthRoleArn": "arn:aws:iam::010928192143:role/amplify-islandserenity-dev-5c507-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::010928192143:role/amplify-islandserenity-dev-5c507-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-islandserenity-dev-5c507-deployment",
+      "UnauthRoleName": "amplify-islandserenity-dev-5c507-unauthRole",
+      "StackName": "amplify-islandserenity-dev-5c507",
+      "StackId": "arn:aws:cloudformation:us-east-2:010928192143:stack/amplify-islandserenity-dev-5c507/cd437690-5506-11ef-be1b-06a09c17cb47",
+      "AmplifyAppId": "d7c94piiceifa"
+    },
+    "categories": {
+      "auth": {
+        "islandserenity9abe4b90": {
+          "userPoolId": "us-east-2_GKk2TyV2x",
+          "userPoolName": "UserAccount",
+          "webClientId": "3ff4a8c3otuu5gr65u3kmlte35",
+          "nativeClientId": "3ff4a8c3otuu5gr65u3kmlte35"
+        }
+      }
+    }
+  }
+}
