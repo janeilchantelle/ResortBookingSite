@@ -429,9 +429,10 @@ h2 {
   font-size: 0.8rem;
   border: 1px solid rgb(248, 155, 166);
   background-color: rgb(227, 114, 127);
-  color: rgb(255, 138, 152);
+  color: rgb(255, 255, 255);
   transition: box-shadow 0.3s ease;
   height: 38px;
+  opacity: 1;
 }
 
 .booking-form input::placeholder {
